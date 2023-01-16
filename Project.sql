@@ -71,10 +71,12 @@ On track.trackid = artist.Artistid
 ;
 
 #12 Show the total sales$ for each artist
-Select track.Sales, artist.Name 
-From track 
-inner join artist 
-On track.trackid = artist.Artistid 
-Group by artist.Name 
+SELECT artist.Name, SUM(UnitPrice*sales) AS total_sales$
+FROM track
+INNER JOIN album 
+ON track.albumId=album.albumId
+INNER JOIN artist
+ON album.artistId=artist.artistId
+GROUP BY artist.Name;
 ; 
 
