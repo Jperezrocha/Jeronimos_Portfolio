@@ -1,4 +1,4 @@
-# 1. What is the total sales revenue of each track (name) that we will identify by sales$ ? Round the value to the nearest whole number.\
+# 1. What is the total sales revenue of each track (name) that we will identify by sales$?
 Select Name, round(Sales,0) as Revenue 
 From track; 
 
@@ -54,7 +54,7 @@ Inner join album
 on album.Albumid = track.Trackid
 Group by album.Title; 
 
-#10 How many tracks are composed by Steve Harris in each album? -- Regresar 
+#10 How many tracks are composed by Steve Harris in each album? 
 Select album.Title, count(track.Name) as Number_of_Tracks, track.Composer 
 From track 
 Inner join album 
